@@ -21,13 +21,13 @@ public class Aluno{
      public Aluno(String nome, int dataDeNanscimento, double peso, double altura){
          this.nome = nome; 
          this.dataDeNanscimento = dataDeNanscimento; 
-         if(this.peso < 0){
+         if(peso < 0){
             this.peso = 0.00;
          }else{
             this.peso = peso; 
          }
          
-          if(this.altura < 0){
+          if(altura < 0){
               this.altura = 0;
           }else{
             this.altura = altura; 
@@ -70,4 +70,9 @@ public class Aluno{
    public void setAltura(double altura){
     this.altura = altura; 
    }
+
+  public int calcularIdade() {
+    int anoAtual = LocalDate.now().getYear();
+    return anoAtual - dataDeNanscimento;
+}
 }
